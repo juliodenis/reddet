@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "app.bundle.js",
     publicPath: "/",
   },
@@ -16,6 +16,7 @@ module.exports = {
     open: true,
     port: 3000,
     historyApiFallback: true,
+    contentBase: "./build",
   },
 
   module: {
