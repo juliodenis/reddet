@@ -13,7 +13,7 @@ export function* getUser(payload) {
     const result = yield call(
       apiGetCall,
       "get",
-      `http://localhost:4000/users/${id}`
+      `https://reddet-api.herokuapp.com/users/${id}`
     );
     yield put({
       type: SUCCESS_GET_USER,
@@ -30,7 +30,7 @@ export function* updateUser({ payload }) {
     const results = yield call(
       apiPutCall,
       "put",
-      `http://localhost:4000/users/${id}`,
+      `https://reddet-api.herokuapp.com/users/${id}`,
       payload
     );
     yield put({

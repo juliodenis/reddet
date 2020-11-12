@@ -6,16 +6,7 @@
       "user": "Fernanda Rivera",
       "userId": "2",
       "userImage": "/assets/images/db8066df26234c9b72fbd6d21064db6b.png",
-      "comments": [
-        {
-          "commentId": "QZpB_lSJR61ubAVd-_HfP",
-          "postId": 1,
-          "userLoggedName": "Julio Denis",
-          "userLoggedImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
-          "userLoggedId": 1,
-          "body": "Te amo mucho 💖"
-        }
-      ],
+      "comments": [],
       "body": "Soy una dulce abogada 💚",
       "createdAt": "2020-11-12T05:59:23.286Z",
       "id": 1
@@ -49,6 +40,56 @@
       "createdAt": "2020-11-12T08:02:10.492Z",
       "body": "Probando el post",
       "id": 3
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T19:02:39.512Z",
+      "body": "asdasd",
+      "id": 4
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T19:02:45.474Z",
+      "body": "Funciona en local\n",
+      "id": 5
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T19:03:07.131Z",
+      "body": "sdsdf",
+      "id": 6
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T19:03:39.957Z",
+      "body": "Funciona para el mundo\n",
+      "id": 7
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T19:11:58.948Z",
+      "body": "asdsd",
+      "id": 8
     }
   ],
   "comments": [],

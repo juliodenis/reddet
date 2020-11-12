@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 // Components
 import Layout from "../components/Layout/Layout";
@@ -16,6 +17,9 @@ const App = (props) => {
       <Switch>
         <Route path="/auth" component={Login} />
         <Layout>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
           <Route exact path="/home" component={Home} />
           <Route exact path="/posts/:id" component={Comments} />
           <Route exact path="/profile" component={UserEdit} />

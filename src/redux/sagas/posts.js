@@ -16,7 +16,7 @@ export function* getPosts({ payload }) {
     const results = yield call(
       apiGetCall,
       "get",
-      "http://localhost:4000/posts/"
+      "https://reddet-api.herokuapp.com/posts"
     );
     yield put({ type: SUCCESS_GET_POSTS, results });
   } catch (error) {
@@ -29,9 +29,10 @@ export function* createPost(payload) {
     const results = yield call(
       apiPostCall,
       "post",
-      "http://localhost:4000/posts/",
+      "https://reddet-api.herokuapp.com/posts",
       payload
     );
+    console.log("llamada de los posts", results);
     yield put({
       type: SUCCESS_CREATE_POST,
       results,
@@ -47,7 +48,7 @@ export function* deletePost(payload) {
     const results = yield call(
       apiDeleteCall,
       "delete",
-      `http://localhost:4000/posts/${id}`,
+      `https://reddet-api.herokuapp.com/posts/${id}`,
       id
     );
     yield put({
@@ -65,7 +66,7 @@ export function* getOnePost({ payload }) {
     const results = yield call(
       apiGetCall,
       "get",
-      `http://localhost:4000/posts/${id}`
+      `https://reddet-api.herokuapp.com/posts/${id}`
     );
     yield put({ type: SUCCESS_GET_ONE_POST, results });
   } catch (error) {

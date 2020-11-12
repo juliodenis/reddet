@@ -13,7 +13,7 @@ export function* getComments(payload) {
     const results = yield call(
       apiGetCall,
       "get",
-      `http://localhost:4000/posts/${id}`
+      `https://reddet-api.herokuapp.com/posts/${id}`
     );
     yield put({
       type: SUCCESS_GET_COMMENTS,
@@ -32,7 +32,7 @@ export function* createComment(payload) {
     const results = yield call(
       apiPutCall,
       "put",
-      `http://localhost:4000/posts/${id}`,
+      `https://reddet-api.herokuapp.com/posts/${id}`,
       payload
     );
     yield put({

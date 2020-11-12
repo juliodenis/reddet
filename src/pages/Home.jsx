@@ -33,7 +33,7 @@ const Home = (props) => {
   const [postsStatus, setPostsStatus] = useState(false);
 
   useEffect(() => {
-    if (postAdded && postsStatus) {
+    if (postAdded) {
       const timer = setTimeout(() => {
         setPostAdded(false);
         const status = dispatch(setPostState(false));
@@ -43,10 +43,10 @@ const Home = (props) => {
         clearTimeout(timer);
       };
     }
-  }, [postAdded, postAdded, postsStatus]);
+  }, [postAdded, postAdded]);
 
   useEffect(() => {
-    if (postsData.length && !postAdded && !postsStatus) return;
+    if (postsData.length && !postAdded) return;
     dispatch(startGetPosts());
 
     setPostsData(posts);
