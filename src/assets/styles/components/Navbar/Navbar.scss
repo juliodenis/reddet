@@ -1,0 +1,83 @@
+@import "../../Breackpoints.scss";
+@import '../../partials/shadows.scss';
+@import '../../partials/colors.scss';
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    box-shadow: $shadow-normal;
+    background-color: $color-primary;
+    &__logo {
+        a {
+
+            text-transform: uppercase;
+            color: $color-white;
+            font-size: 28px;
+            
+        }
+
+    }
+    &__profile {
+        .navbar__profile--settings {
+            position: relative;
+                .navbar__profile--settings-dropdown {
+                    position: relative;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    svg {
+                        color: $color-background;
+                    }
+                }
+        }
+        .navbar__profile--settings:hover {
+            .profile-dropdown-content {
+                display: block;
+            }
+            a {
+                background-color: $color-black-10;
+                border-radius: 5px;
+            }
+        }
+        .profile-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: $color-background;
+            border: 1px solid $color-black-10;
+            border-radius: 12px;
+            box-shadow: $shadow-small-green;
+            min-width: 180px;
+            z-index: 1;
+            a {
+                color: $color-black-60;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                transition: .3s;
+            }
+            a:hover {
+                background-color: $color-black-10;
+                color: $color-primary;
+            }
+            
+          }
+        
+    }
+    
+}

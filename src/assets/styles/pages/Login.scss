@@ -1,0 +1,90 @@
+@import '../Breackpoints.scss';
+@import '../partials/shadows.scss';
+@import '../partials/colors.scss';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginCard {
+    display: inline-block;
+    width: 420px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: $shadow-normal;
+    border-radius: 8px;
+    margin: 15px;
+    h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    form {
+        margin-top: 20px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        input {
+            height: 45px;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 1px solid $color-black-60;
+            font-size: 18px;
+            outline: none;
+        }
+        
+        button {
+            margin: 0 auto;
+            margin-top: 40px;
+            height: 45px;
+            width: 190px;
+            border-radius: 20px;
+            font-size: 18px;
+            background-color: $color-primary;
+            color: $color-white;
+            border: none;
+            transition: .3s;
+            outline: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: $color-primary-60;
+        }
+    }
+    @include media(mobile-l) {
+        width: 460px;
+        h1 {
+            font-size: 25px;
+        }
+    }
+    @include media(desktop-l) {
+        width: 660px;
+        height: 520px;
+        padding: 40px;
+        h1 {
+            font-size: 25px;
+            margin-top: 45px;
+        }
+        form {
+            margin-top: 80px;
+            label {
+                font-size: 20px;
+            }
+            input {
+                height: 55px;
+            }
+            input::placeholder {
+                font-size: 18px;
+            }
+        }
+        small {
+            margin-top: 80px;
+        }
+    }
+    
+}

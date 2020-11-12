@@ -1,0 +1,89 @@
+@import '../Breackpoints.scss';
+@import '../partials/shadows.scss';
+@import '../partials/colors.scss';
+
+.comments {
+    box-shadow: $shadow-large-green;
+    margin-top: 15px;
+    border-radius: 12px;
+    padding: 10px;
+    .comments__noComments {
+        text-align: center;
+        font-style: italic;
+        color: $color-primary;
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        .comment-list-user {
+            height: inherit;
+            margin-top: 10px;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .comments__comment-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: $color-black-10;
+            border-radius: 12px;
+            margin-left: 8px;
+            margin-top: 7px;
+            padding: 10px;
+            width: 100%;
+            height: auto;
+            h4 {
+                color: $color-primary;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    &__addComment {
+        display: flex;
+        margin-top: 10px;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        form {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            width: 100%;
+            input {
+                height: 40px;
+                width: inherit;
+                border-radius: 12px;
+                padding: 8px;
+                outline: none;
+                border: none;
+                background-color: $color-black-10;
+            }
+            input::placeholder {
+                font-size: 16px;
+            }
+            button {
+                margin-left: 5px;
+                width: 60px;
+                height: 50px;
+                border: none;
+                border-radius: 50%;
+                background-color: $color-primary;
+                color: $color-white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+}

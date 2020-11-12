@@ -1,0 +1,185 @@
+@import '../../Breackpoints.scss';
+@import '../../partials/shadows.scss';
+@import '../../partials/colors.scss';
+
+.Post {
+    box-shadow: $shadow-small-green;
+    width: 320px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 12px;
+    &__user {
+        display: flex;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .Post__user-name {
+            p {
+                margin-left: 10px;
+                margin-top: 8px;
+                font-weight: 700;
+                color: $color-primary;
+            }
+        }
+    }
+    &__body {
+        p {
+            font-size: 14px;
+            margin-left: 18px;
+            margin: 10px;
+        }
+    }
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        .Post__buttons--comments {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-right: 10px;
+            width: 140px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            color: $color-black-60;
+        }
+        .Post__buttons--comments:hover {
+            background-color: $color-black-10;
+            border-radius: 5px;
+            color: $color-primary;
+        }
+        .Post__buttons--settings {
+            position: relative;
+            width: 34px;
+            a {
+
+                position: relative;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+            }
+        }
+        .Post__buttons--settings:hover {
+            .dropdown-content {
+                display: block;
+            }
+            a {
+
+                background-color: $color-black-10;
+                border-radius: 5px;
+            }
+            
+        }
+        .Post__buttons--settings-dots::after {
+            
+                content: '\2807';
+                font-size: 28px;
+                color: $color-primary;
+
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: $color-background;
+            border: 1px solid $color-black-10;
+            border-radius: 12px;
+            box-shadow: $shadow-small-green;
+            min-width: 160px;
+            z-index: 1;
+            a {
+                color: $color-black-60;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                transition: .3s;
+            }
+            a:hover {
+                background-color: $color-black-10;
+                color: red;
+            }
+        }
+    }
+    
+    @include media(mobile-l) {
+        width: 420px;
+
+        &__user {
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            .Post__user-name {
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+        &__body {
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    @include media(tablet) {
+        width: 570px;
+        &__user {
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            .Post__user-name {
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+        &__body {
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+    @include media(desktop-s) {
+        width: 780px;
+        &__user {
+            img {
+                width: 80px;
+                height: 80px;
+            }
+            .Post__user-name {
+                p {
+                    font-size: 24px;
+                }
+            }
+        }
+        &__body {
+            p {
+                font-size: 25px;
+            }
+        }
+    }
+}
+.Post:hover {
+    box-shadow: $shadow-large-green;
+}

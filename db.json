@@ -1,0 +1,87 @@
+{
+  "posts": [
+    {
+      "type": "START_CREATE_COMMENT",
+      "postId": 1,
+      "user": "Fernanda Rivera",
+      "userId": "2",
+      "userImage": "/assets/images/db8066df26234c9b72fbd6d21064db6b.png",
+      "comments": [
+        {
+          "commentId": "QZpB_lSJR61ubAVd-_HfP",
+          "postId": 1,
+          "userLoggedName": "Julio Denis",
+          "userLoggedImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+          "userLoggedId": 1,
+          "body": "Te amo mucho 💖"
+        }
+      ],
+      "body": "Soy una dulce abogada 💚",
+      "createdAt": "2020-11-12T05:59:23.286Z",
+      "id": 1
+    },
+    {
+      "type": "START_CREATE_COMMENT",
+      "postId": 2,
+      "user": "Julio Denis",
+      "userId": "1",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [
+        {
+          "commentId": "do7aHOR8OQ6OECWKH5BLF",
+          "postId": 2,
+          "userLoggedName": "Julio Denis",
+          "userLoggedImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+          "userLoggedId": 1,
+          "body": "Comentario"
+        }
+      ],
+      "body": "Soy un FullStack developer 😎",
+      "createdAt": "2020-11-12T06:01:39.116Z",
+      "id": 2
+    },
+    {
+      "type": "START_CREATE_POST",
+      "userId": "1",
+      "user": "Julio Denis",
+      "userImage": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg",
+      "comments": [],
+      "createdAt": "2020-11-12T08:02:10.492Z",
+      "body": "Probando el post",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "Julio Denis",
+      "description": "Backend Developer",
+      "image": "https://res.cloudinary.com/wedeal-project/image/upload/v1602944417/qenidjsyezlus95kge3w.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Fernanda Rivera",
+      "description": "Backend Developer",
+      "image": null
+    },
+    {
+      "id": 3,
+      "name": "Renata Guzmán",
+      "description": "Gerente de ventas",
+      "image": null
+    },
+    {
+      "id": 4,
+      "name": "María Perez",
+      "description": "Gerente de TI",
+      "image": null
+    },
+    {
+      "id": 5,
+      "name": "Michel Pacheco",
+      "description": "Gerente de Compras",
+      "image": null
+    }
+  ]
+}

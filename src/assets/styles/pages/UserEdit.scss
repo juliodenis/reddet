@@ -1,0 +1,84 @@
+@import '../Breackpoints.scss';
+@import '../partials/shadows.scss';
+@import '../partials/colors.scss';
+
+
+.profile {
+    display: inline-block;
+    width: 420px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: $shadow-large-green;
+    border-radius: 8px;
+    margin: 15px;
+    &__user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        img {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid $color-primary;
+        }
+        h1 {
+            font-size: 30px;
+            margin-top: 10px;
+            color: $color-black-90;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 28px;
+            font-style: italic;
+            color: $color-black-60;
+        }
+    }
+    &__user-info--edit {
+        margin-top: 30px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        form {
+            h2 {
+                margin-bottom: 9px;
+            }
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            input {
+                height: 45px;
+                padding: 10px;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                margin-top: 8px;
+                border: 1px solid $color-black-60;
+                font-size: 18px;
+                outline: none;
+            }
+
+            button {
+                margin: 0 auto;
+                margin-top: 40px;
+                height: 45px;
+                width: 190px;
+                border-radius: 20px;
+                font-size: 18px;
+                background-color: $color-primary;
+                color: $color-white;
+                border: none;
+                transition: .3s;
+                outline: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: $color-primary-60;
+            }
+        }
+    }
+}
