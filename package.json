@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "api": "npx json-server --watch db.json --port 4000",
+    "api": "json-server --watch db.json --port 4000",
     "build": "webpack --mode production",
-    "deploy": "npx netlify deploy",
+    "deploy": "netlify deploy --prod",
     "test":"jest",
     "test:watch":"jest --watch"
   },
