@@ -38,9 +38,15 @@ const reducer = (state, action) => {
       return {
         ...state,
       };
-    case "SUCCESS_CREATE_COMMENT":
+    case "SUCCESS_GET_COMMENTS":
       return {
         ...state,
+        comments: [...action.results],
+      };
+    case "SUCCESS_GET_COMMENTS":
+      return {
+        ...state,
+        comments: action.results,
       };
     case "START_GET_COMMENTS":
       return {

@@ -8,6 +8,7 @@ const sagaMiddleware = reduxSaga();
 const initialState = {
   posts: [],
   users: [],
+  comments: [],
 };
 
 export default () => {

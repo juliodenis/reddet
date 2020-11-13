@@ -32,7 +32,6 @@ export function* createPost(payload) {
       "https://reddet-api.herokuapp.com/posts",
       payload
     );
-    console.log("llamada de los posts", results);
     yield put({
       type: SUCCESS_CREATE_POST,
       results,

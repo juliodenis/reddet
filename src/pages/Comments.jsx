@@ -22,15 +22,14 @@ import { setPostState } from "../redux/actions/validations";
 import CommentList from "../components/Comments/CommentList";
 
 const Comments = (props) => {
-  const { posts } = props;
+  const postId = props.match.params.id;
+
   const {
-    postId,
     user,
     userId,
     body,
     comments,
     userImage,
-    createdAt,
     userLoggedName,
     userLoggedImage,
     userLoggedId,
@@ -40,64 +39,41 @@ const Comments = (props) => {
   const isAuth = useAuthStatus(true);
   const dispatch = useDispatch();
 
-  const [commentsData, setCommentData] = useState(comments);
+  const [commentsData, setCommentsData] = useState(props.comments);
   const [commentAdded, setCommentAdded] = useState(false);
-  const [postsStatus, setPostsStatus] = useState(false);
+  const [form, setForm] = useState({
+    postId,
+    userLoggedName,
+    userLoggedId,
+    userLoggedImage,
+  });
   useEffect(() => {
-    dispatch(setPostState(false));
-  }, []);
-  useEffect(() => {
-    if (commentAdded && postsStatus) {
+    if (commentAdded) {
       const timer = setTimeout(() => {
         setCommentAdded(false);
-        const status = dispatch(setPostState(false));
-        setPostsStatus(status.payload);
       }, 1000);
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [commentAdded, postsStatus]);
+  }, [commentAdded]);
 
   useEffect(() => {
-    if (commentsData.length && !commentAdded && !postsStatus) return;
-    setCommentData(comments);
-  }, [commentsData, postsStatus]);
-
-  const [form, setForm] = useState({
-    postId,
-    user,
-    userId,
-    userImage,
-    comments: comments,
-    body,
-    createdAt,
-  });
+    if (commentsData.length && !commentAdded) return;
+    dispatch(startGetcomments(postId));
+  }, [commentsData, commentAdded]);
 
   const handleChange = (event) => {
-    const commentId = nanoid();
     setForm({
       ...form,
-      comments: [
-        ...comments,
-        {
-          commentId,
-          postId,
-          userLoggedName,
-          userLoggedImage,
-          userLoggedId,
-          body: event.target.value,
-        },
-      ],
+      [event.target.name]: event.target.value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(startCreateComment(form));
-    setCommentAdded(true);
-    const status = dispatch(setPostState(true));
-    setPostsStatus(status);
+    setForm({ ...form, body: "" });
     setCommentAdded(true);
   };
 
@@ -137,18 +113,18 @@ const Comments = (props) => {
         <section className="Post__buttons">
           <p className="Post__buttons--comments">
             <CgComment />
-            {comments.length} Comentarios
+            {props.comments.length} Comentarios
           </p>
           <DeleteSettings />
         </section>
         <hr />
         <div className="comments">
-          {commentsData.length === 0 ? (
+          {props.comments.length === 0 ? (
             <h2 className="comments__noComments">No hay comentarios...</h2>
           ) : (
             false
           )}
-          {commentsData.map((comment) => {
+          {props.comments.map((comment) => {
             return (
               <CommentList
                 key={comment.comentId}
@@ -166,6 +142,7 @@ const Comments = (props) => {
               <input
                 onChange={handleChange}
                 name="body"
+                value={form.body}
                 type="text"
                 placeholder="Escribe un comentario..."
               />
@@ -182,7 +159,7 @@ const Comments = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts,
+    comments: state.comments,
   };
 };
 export default connect(mapStateToProps, {

@@ -21,6 +21,7 @@ import {
 } from "../redux/actions/posts";
 import { startGetUser, successGetUser } from "../redux/actions/users";
 import { setPostState } from "../redux/actions/validations";
+import { startGetcomments } from "../redux/actions/comments";
 
 const Home = (props) => {
   const { posts, users } = props;
@@ -55,6 +56,8 @@ const Home = (props) => {
   useEffect(() => {
     const userId = JSON.parse(localStorage.getItem("auth"));
     dispatch(startGetUser(userId));
+    console.log(props);
+    props.posts.map((post) => console.log("rendering"));
   }, []);
 
   const handleChange = (event) => {
@@ -123,7 +126,6 @@ const Home = (props) => {
           return (
             <Post
               key={post.id}
-              comments={post.comments}
               body={post.body}
               postId={post.id}
               user={post.user}
@@ -156,4 +158,5 @@ export default connect(mapStateToProps, {
   startCreatePost,
   successCreatePost,
   setPostState,
+  startGetcomments,
 })(Home);

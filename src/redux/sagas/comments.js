@@ -7,13 +7,13 @@ import {
 } from "../actions/comments";
 import { apiPostCall, apiPutCall, apiGetCall } from "../api/index";
 
-export function* getComments(payload) {
-  const id = payload.postId;
+export function* getComments({ payload }) {
+  const id = payload;
   try {
     const results = yield call(
       apiGetCall,
       "get",
-      `https://reddet-api.herokuapp.com/posts/${id}`
+      `https://reddet-api.herokuapp.com/comments?postId=${id}`
     );
     yield put({
       type: SUCCESS_GET_COMMENTS,
@@ -27,12 +27,11 @@ export function* getComments(payload) {
 }
 
 export function* createComment(payload) {
-  const id = payload.postId;
   try {
     const results = yield call(
-      apiPutCall,
-      "put",
-      `https://reddet-api.herokuapp.com/posts/${id}`,
+      apiPostCall,
+      "post",
+      `https://reddet-api.herokuapp.com/comments`,
       payload
     );
     yield put({

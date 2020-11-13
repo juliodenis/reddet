@@ -21,7 +21,7 @@ export const successCreateComment = (payload) => {
 export const startGetcomments = (payload) => {
   return {
     type: START_GET_COMMENTS,
-    ...payload,
+    payload,
   };
 };
 

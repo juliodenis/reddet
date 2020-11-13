@@ -48,7 +48,7 @@ const Navbar = (props) => {
     <Fragment>
       <div className="navbar">
         <section className="navbar__logo">
-          <Link to="/home">Reddet</Link>
+          <a href="/home">Reddet</a>
         </section>
         <section className="navbar__profile">
           <Menu />

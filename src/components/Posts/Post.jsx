@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { CgComment } from "react-icons/cg";
 import { MdDelete } from "react-icons/md";
 import { startDeletePost } from "../../redux/actions/posts";
+import { startGetcomments } from "../../redux/actions/comments";
 
 import "../../assets/styles/components/Post/Post.scss";
 
@@ -23,6 +24,10 @@ const Post = ({
   userLoggedId,
 }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(startGetcomments(postId));
+  }, []);
 
   const userActive = JSON.parse(localStorage.getItem("auth"));
   const handleClick = (event) => {
@@ -77,8 +82,7 @@ const Post = ({
             }}
           >
             <CgComment />
-            {comments.length}{" "}
-            {comments.length == 1 ? "Comentario" : "Comentarios"}
+            <p>Ver comentarios</p>
           </Link>
           <DeleteSettings />
         </section>
@@ -94,4 +98,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { startDeletePost })(Post);
+export default connect(mapStateToProps, { startDeletePost, startGetcomments })(
+  Post
+);
